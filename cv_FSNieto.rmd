@@ -143,12 +143,6 @@ CV %<>% print_section('preprints')
 ```
 
 
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('research_positions')
-```
 
 
 
@@ -163,15 +157,6 @@ Teaching Experience {data-icon=chalkboard-teacher}
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
-
-
-Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('data_science_writings')
-```
-
 
 
 
@@ -198,6 +183,22 @@ CV %<>% print_section('course_attendances')
 ```
 
 
+Academic Visiting {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('academic_visiting_stays')
+```
+
+
+Training and Work Related with Equality {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('training_and_work_related_with_equality')
+```
+
+
 Science Communication {data-icon=atom}
 --------------------------------------------------------------------------------
 
@@ -206,7 +207,22 @@ CV %<>% print_section('science_communication')
 ```
 
 
-```{r}
+```{r, eval=FALSE}
 CV %<>% print_links()
 ```
+
+
+---
+title: "Nieto CV"
+author: Francisco Santiago Nieto de la Rosa
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv.css', 'resume']
+    self_contained: true
+knit: pagedown::chrome_print
+---
 

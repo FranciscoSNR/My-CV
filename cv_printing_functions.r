@@ -235,11 +235,12 @@ Links {data-icon=link}
 
 #' @description Contact information section with icons
 print_contact_info <- function(cv){
-  glue::glue_data(
-    cv$contact_info,
-    "- <i class='fa fa-{icon}'></i> {contact}"
-  ) %>% print()
-
+  brands <- c("github", "orcid", "linkedin",
+              "researchgate", "mastodon", "bluesky", "gitlab")
+  cv$contact_info %>%
+    dplyr::mutate(prefix = ifelse(icon %in% brands, "fab", "fas")) %>%
+    glue::glue_data("- <i class='{prefix} fa-{icon}'></i> {contact}") %>%
+    print()
   invisible(cv)
 }
 
